@@ -5,7 +5,10 @@
 *.csv
 
 # ignore ALL .xlsx files
-2.\ Export/1.\ Export\ scraper/*.xlsx
+2.\ Exports/1.\ Export\ scraper/*.xlsx
 
 # ignore ALL .pyc files
 *.pyc
+
+# ignore Export folder
+2.\ Exports/
