@@ -1,11 +1,5 @@
-# linkedin_scraper
- Shared code to scrap and analyze LinkedIn job offers
-
-
-The hereby code must be updated following the following names:
-- 29/08 to 02/09: Doppio
-- 05/08 to 09/09: Lungo
-- 12/08 to 16/09: Ristretto
-- 19/09 to 23/09: Latte
-- 26/09 to 30/09: Macchiato
-- 03/10 to 07/10: Cappuccino
+The aim of this project is to use Python and Selenium to scrap any job posted on platforms like LinkedIn, Glassdoor, or Indeed. 
+The project is still under construction and will allow at the end to :
+- Scrap any jobs posted with selected info
+- Detect the technical skills required by each position using NLTK package
+- Analyze the trend of those skills
