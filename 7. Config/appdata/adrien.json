@@ -1,0 +1,170 @@
+{
+    "adrien":{
+		"Driver":{
+			"multi": false
+		},        
+        "Connect":{
+            "Load home page"		:
+            {
+                "to_do"			: "Load",
+                "params"		:{
+                    "url"			: "https://linkedin.com"
+                }
+
+            },
+            "Wait to load login"	:
+            {
+                "to_do"			: "Wait",
+                "params"		:{
+                    "element_name"  : "login"
+                }
+            },
+            "Fill log in"	:
+            {
+                "to_do"			: "Fill",
+                "params"		:{
+                    "element_name"  : "login",
+                    "key"			: "pierre.montroeul@gmail.com"
+                }
+            },
+            "Fill password"		:
+            {
+                "to_do"			: "Fill",
+                "params"		:{
+                    "element_name"  : "password",
+                    "key"			: "Coucou123!"
+                }
+            },
+            "Force sleep"		:
+            {
+                "to_do"			: "Sleep",
+                "params":{
+                    "duration"		: 1
+                }
+            },
+            "Click Button login":
+            {
+                "to_do"			: "Click",
+                "params"		:{
+                    "element_name"  	: "login_button",
+                    "wait_for_element"	: "search_bar"
+                }
+            }
+        },
+        "People Search":{
+            "Fill search bar" :
+            {
+                "to_do"			: "Fill",
+                "params"		:{
+                    "element_name"  : "search_bar",
+                    "key"			:[
+                        "\"head of csr\" OR \"csr\" OR \"ESG\" OR \"sustainability\" OR \"durable\" OR \"RSE\"",
+                        "Keys_enum.RETURN"
+                    ]
+                }
+            },
+            "Wait to load people button" :
+            {
+                "to_do"			: "Wait",
+                "params"		:{
+                    "element_name"  : "people_button"
+                }
+            },
+            "Click on People":
+            {
+                "to_do"			: "Click",
+                "params"		:{
+                    "element_name"	 	 : "people_button",
+                    "wait_for_element"	 : "entity_results"
+                }
+            },
+            "Force to sleep 1":
+            {
+                "to_do"			: "Sleep",
+                "params"		:{
+                    "duration" 		: 3
+                }
+            },
+            "Click on Filter":
+            {
+                "to_do"			: "Click",
+                "params"		:{
+                    "element_name"  	: "location_filter_button",
+                    "wait_for_element"	: "belgium_button"
+                }
+            },
+            "Click on Belgium":
+            {
+                "to_do"			: "Click",
+                "params"		:{
+                    "element_name"  	: "belgium_button",
+                    "wait_for_element"	: "time_filter_validation_button"
+                }
+            },
+            "Force to sleep 2":
+            {
+                "to_do"			: "Sleep",
+                "params"		:{
+                    "duration" 		: 2
+                }
+            },
+            "Click on Validate":
+            {
+                "to_do"			: "Click",
+                "params"		:{
+                    "element_name" 		: "all_filters_button",
+                    "wait_for_element"	: "entity_results"
+                }
+            }
+        },
+        "Scrap People":{
+			"Scroll":
+			{
+				"to_do"			: "Scroll",
+				"params":{
+					"element_name"  	: "entity_results"
+				}
+			},
+			"Force to sleep":
+			{
+				"to_do"			: "Sleep",
+				"params"		:{
+					"duration" 		: 4
+				}
+			},
+			"Get element object":
+			{
+				"to_do"			: "Get object",
+				"params":{
+					"element_name"  : "person_object"
+				}
+			},
+			"Get element contents":
+			{
+				"to_do"			: "Get elements",
+				"params":{
+					"element_name"  : ["person_name", "person_job_title" , "person_location", "person_company","person_name"],
+					"attribute"		: ["innerText", "innerText", "innerText", "innerText", "href"]
+				}
+			},
+			"Click on Next":
+			{
+				"to_do"			: "Click",
+				"params"		:{
+					"element_name"  	: "next_page_button",
+					"wait_for_element"	: "entity_results"
+				}
+			}
+		},
+		"Export data":{
+			"Export data":{
+				"to_do"			: "Export",
+				"params":{
+					"path"	: "export"
+				}
+			}
+		}
+	},
+
+    "inner_variables": ["person_element", "person_content"]
+}

@@ -1,0 +1,9 @@
+linkedin:
+data analyst OR data engineer OR data scientist OR data consultant
+cyber security OR risk analyst OR risk management OR data protection OR RGPD
+indeed:
+data
+cybersecurity
+glassdoor:
+data
+cybersecurity

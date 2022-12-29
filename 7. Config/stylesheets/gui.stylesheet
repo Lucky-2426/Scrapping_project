@@ -1,0 +1,60 @@
+"""
+        QWidget#task_layout{
+            background: #F2F2F2;
+            border-radius: 15px;
+        }
+
+        QLabel#task_label{
+            background: #FFFFFF;
+            color: #0274B3;
+            font-size: 32px
+            border-radius: 15px;
+        }
+
+        QLabel#action_label{
+            background: #FFFFFF;
+            color: #0274B3;
+            font-size: 32px
+            border-radius: 15px;
+        }
+
+        QWidget#action_layout{
+            background: #50A49F;
+            border-radius: 15px;
+        }
+
+        QWidget#action_combobox, QWidget#element_name, QWidget#action{
+            background: #0C2637;
+            color: #E9E9E9;
+            border-radius: 15px;
+            padding: 2px 15px;
+        }
+
+        QWidget#left_panel, QWidget#launch_button{
+            background: #0C2637;
+            color: #E9E9E9;
+            border-radius: 15px;
+        }
+
+        QWidget#search_rectangle{
+            background: #F2F2F2;
+            border-radius: 15px;
+        }
+
+        QLabel{
+            color: #0274B3;
+            font-size: 32px;
+        }
+
+        QLineEdit{
+            color: #E9E9E9;
+            background: #0C2637;
+            border-radius: 15px;
+            padding: 2px 15px;
+            font-size: 16px;
+        }
+
+        QMainWindow{
+            background: #FFFFFF;
+        }
+"""

@@ -1,0 +1,176 @@
+{	
+	"indeed_daily":{
+		"Driver":{
+			"multi": false
+		},
+		"Connect":{
+			"Load home page"		:
+			{
+				"to_do"			: "Load",
+				"params"		:{
+					"url"			: "https://be.indeed.com/?r=us"
+				}
+			}
+		},
+
+		"Job Search":{
+			"Wait cookies button" :
+			{
+				"to_do"			: "Wait",
+				"params"		:{
+					"element_name"  : "indeed_search_button"
+				}
+			},
+			"Click on Cookies":
+			{
+				"to_do"			: "Click",
+				"params"		:{
+					"element_name"	 	 : "indeed_cookies_button",
+					"wait_for_element"	 : "indeed_job_title_search_bar"
+				}
+			},
+			"Fill search bar" :
+			{
+				"to_do"			: "Fill",
+				"params"		:{
+					"element_name"  : "indeed_job_title_search_bar",
+					"key"			:[
+						"data"
+					]
+				}
+			},
+			"Fill location search bar" :
+			{
+				"to_do"			: "Fill",
+				"params"		:{
+					"element_name"  : "indeed_job_location_search_bar",
+					"key"			:[
+						"Belgium"
+					]
+				}
+			},
+			"Wait to load job button" :
+			{
+				"to_do"			: "Wait",
+				"params"		:{
+					"element_name"  : "indeed_search_button"
+				}
+			},
+			"Click on Jobs":
+			{
+				"to_do"			: "Click",
+				"params"		:{
+					"element_name"	 	 : "indeed_search_button",
+					"wait_for_element"	 : "indeed_close_google_button"
+				}
+			},
+			"Click on close google connect":
+			{
+				"to_do"			: "Click",
+				"params"		:{
+					"element_name"	 	 : "indeed_close_google_button",
+					"wait_for_element"	 : "indeed_close_popup_button"
+				}
+			},
+			"Force sleep"		:
+			{
+				"to_do"			: "Sleep",
+				"params":{
+					"duration"		: 3
+				}
+			},
+			"Click on close popup":
+			{
+				"to_do"			: "Click",
+				"params"		:{
+					"element_name"	 	 : "indeed_close_popup_button",
+					"wait_for_element"	 : "indeed_time_filter_button"
+				}
+			},
+			"Click on time filter":
+            {
+                "to_do"            : "Click",
+                "params"        :{
+                    "element_name"          : "indeed_time_filter_button",
+                    "wait_for_element"     : "indeed_1day_time_filter"
+                }
+            },
+            "Click time filter link":
+            {
+                "to_do"            : "Click",
+                "params":{
+                    "element_name"       : "indeed_1day_time_filter",
+                    "wait_for_element"   : "indeed_close_popup_button"
+                }
+            },
+			"Click on close popup again":
+			{
+				"to_do"			: "Click",
+				"params"		:{
+					"element_name"	 	 : "indeed_close_popup_button",
+					"wait_for_element"	 : ""
+				}
+			}
+		},
+		"Scrap":{
+			"Get all links":
+			{
+				"to_do"			: "Scrap",
+				"params":{
+					"element_name"  	: "indeed_job_card",
+					"attribute_to_get"	: "href",
+					"page_locator"		: "",
+					"page_button"		: "indeed_page_button",
+					"page_limit" 		: -1,
+					"on_error"			: "li/a|@href|start=|10"
+				}
+			}
+		},
+		"Scrap multi":{
+			"Load Job offers":
+			{
+				"to_do"			: "Load",
+				"params"		: {}
+			},
+			"Force sleep"		:
+			{
+				"to_do"			: "Sleep",
+				"params":{
+					"duration"		: 1
+				}
+			},
+			"Get page contents":
+			{
+				"to_do"			: "Get",
+				"params":{
+					"element_name"  : ["indeed_job_title", "indeed_company_name", "indeed_job_location", 
+					"indeed_posted_date", "indeed_job_description", "indeed_info_elem"],
+					"attribute"     : ["innerText", "innerText", "innerText", "innerText", "innerText", "innerText"]
+				}
+			},
+			"Force sleep 2"		:
+			{
+				"to_do"			: "Sleep",
+				"params":{
+					"duration"		: 1
+				}
+			}
+		},
+		"close":{
+			"multi"  : true,
+			"Close driver multi": {
+				"to_do"  : "Close",
+				"params" : {}
+			}
+		},
+		"Export data":{
+			"Export data":{
+				"to_do"			: "Export",
+				"params":{
+					"path"		: "indeed_data",
+					"columns"	: ["Link", "Job_Title", "Company_Name", "Location", "Posted_Date", "Job_Description", "Other_Info"]
+				}
+			}
+		}		
+	}
+}

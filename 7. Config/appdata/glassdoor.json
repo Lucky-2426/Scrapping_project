@@ -1,0 +1,204 @@
+{	
+	"glassdoor":{
+		"Driver":{
+			"multi": false
+		},
+		"Connect":{
+			"Load home page"		:
+			{
+				"to_do"			: "Load",
+				"params"		:{
+					"url"			: "https://www.glassdoor.fr/Emploi/index.htm"
+				}
+
+			},
+			"Force sleep 1"		:
+			{
+				"to_do"			: "Sleep",
+				"params":{
+					"duration"		: 2
+				}
+			},
+			"Click Button cookies":
+			{
+				"to_do"			: "Click",
+				"params"		:{
+					"element_name"  	: "glassdoor_cookies",
+					"wait_for_element"	: "glassdoor_connect_button"
+				}
+			}
+		},
+		"Job Search":{
+			"Fill search bar" :
+			{
+				"to_do"			: "Fill",
+				"params"		:{
+					"element_name"  : "glassdoor_job_search",
+					"key"			:[
+						"cybersecurity"
+					]
+				}
+			},
+			"Fill location bar 1" :
+			{
+				"to_do"			: "Fill",
+				"params"		:{
+					"element_name"  : "glassdoor_location",
+					"key"			:[
+						"Belgique",
+                        "Keys_enum.RETURN"
+					]
+				}
+			},
+			"Force sleep 1"		:
+			{
+				"to_do"			: "Sleep",
+				"params":{
+					"duration"		: 2
+				}
+			},
+			"Click on Filter":
+			{
+				"to_do"			: "Click",
+				"params"		:{
+					"element_name"  	: "glassdoor_time_filter",
+					"wait_for_element"	: "glassdoor_30day_time_filter"
+				}
+			},
+			"Force sleep 2"		:
+			{
+				"to_do"			: "Sleep",
+				"params":{
+					"duration"		: 1
+				}
+			},
+			"Click on month Filter":
+			{
+				"to_do"			: "Click",
+				"params"		:{
+					"element_name"  	: "glassdoor_1day_time_filter",
+					"wait_for_element"	: ""
+				}
+			},
+			"Force sleep 3"		:
+			{
+				"to_do"			: "Sleep",
+				"params":{
+					"duration"		: 2
+				}
+			}
+		},
+		"Scrap":{
+			"Click job card":
+			{
+				"to_do"			: "Click",
+				"params"		:{
+					"element_name"  	: "glassdoor_job_card",
+					"wait_for_element"	: "glassdoor_close_popup"
+				}
+			},
+			"Force sleep 1"		:
+			{
+				"to_do"			: "Sleep",
+				"params":{
+					"duration"		: 1
+				}
+			},
+			"Click on close popup":
+			{
+				"to_do"			: "Click",
+				"params"		:{
+					"element_name"  	: "glassdoor_close_popup",
+					"wait_for_element"	: ""
+				}
+			},
+			"Get all links":
+			{
+				"to_do"			: "Scrap",
+				"params":{
+					"element_name"  	: "glassdoor_job_card",
+					"attribute_to_get"	: "href",
+					"page_locator"		: "",
+					"page_button"		: "glassdoor_page_button",
+					"page_limit" 		: -1
+				}
+			},			
+			"Force sleep 3"		:
+			{
+				"to_do"			: "Sleep",
+				"params":{
+					"duration"		: 2
+				}
+			}
+		},
+		"Scrap multi":{
+			"Load Job offers"		:
+			{
+				"to_do"			: "Load",
+				"params"		: {}
+			},			
+			"Force sleep 1"		:
+			{
+				"to_do"			: "Sleep",
+				"params":{
+					"duration"		: 2
+				}
+			},
+			"Click description"		:
+			{
+				"to_do"			: "Click",
+				"params"		: {
+					"element_name"  	: "glassdoor_more_description",
+					"wait_for_element"	: ""
+				}
+			},			
+			"Force sleep 2"		:
+			{
+				"to_do"			: "Sleep",
+				"params":{
+					"duration"		: 1
+				}
+			},
+			"Get page contents":
+			{
+				"to_do"			: "Get",
+				"params":{
+					"element_name"  : ["glassdoor_job_title", "glassdoor_company_name", "glassdoor_location_info", 
+					"glassdoor_job_description"],
+					"attribute"     : ["innerText", "innerText", "innerText", "innerText"]
+				}
+			},
+			"Click company tab"		:
+			{
+				"to_do"			: "Click",
+				"params"		: {
+					"element_name"  	: "glassdoor_company_tab",
+					"wait_for_element"	: ""
+				}
+			},			
+			"Force sleep 3"		:
+			{
+				"to_do"			: "Sleep",
+				"params":{
+					"duration"		: 1
+				}
+			},
+			"Get company page contents":
+			{
+				"to_do"			: "Get",
+				"params":{
+					"element_name"  : ["glassdoor_company_tab_info"],
+					"attribute"     : ["innerText"]
+				}
+			}
+		},
+		"Export data":{
+			"Export data":{
+				"to_do"			: "Export",
+				"params":{
+					"path"	: "glassdoor_cyber"
+				}
+			}
+		}	
+	}
+}

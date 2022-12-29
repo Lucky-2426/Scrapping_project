@@ -1,0 +1,11 @@
+# ignore ALL .log files
+*.log
+
+# ignore ALL .csv files
+*.csv
+
+# ignore ALL .xlsx files
+2.\ Export/1.\ Export\ scraper/*.xlsx
+
+# ignore ALL .pyc files
+*.pyc

@@ -1,0 +1,6 @@
+{
+    "action_label"    : "background: #007dba; color: #fffff5; border-radius: 5px; font-size: 16px;",
+    "action_combobox" : "background: #007dba; color: #fffff5; border-radius: 5px; padding: 10px 15px; font-size: 16px;",
+    "action"          : "background: #fffff5; color: #80d4f6; border-radius: 5px; padding: 10px 15px; font-size: 16px;",
+    "field_label"     : "background: #fffff5; color: #80d4f6; border-radius: 5px; padding: 10px 15px; font-size: 16px;"
+}

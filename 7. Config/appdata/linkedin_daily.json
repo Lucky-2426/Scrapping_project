@@ -1,0 +1,262 @@
+{	
+	"linkedin_daily":{
+		"Driver":{
+			"multi": false
+		},
+		"Connect":{
+			"Load home page"		:
+			{
+				"to_do"			: "Load",
+				"params"		:{
+					"url"			: "https://linkedin.com"
+				}
+
+			},
+			"Wait to load login"	:
+			{
+				"to_do"			: "Wait",
+				"params"		:{
+					"element_name"  : "login"
+				}
+			},
+			"Fill log in"	:
+			{
+				"to_do"			: "Fill",
+				"params"		:{
+					"element_name"  : "login",
+					"key"			: "email_usr"
+				}
+			},
+			"Fill password"		:
+			{
+				"to_do"			: "Fill",
+				"params"		:{
+					"element_name"  : "password",
+					"key"			: "password"
+				}
+			},
+			"Force sleep"		:
+			{
+				"to_do"			: "Sleep",
+				"params":{
+					"duration"		: 1
+				}
+			},
+			"Click Button login":
+			{
+				"to_do"			: "Click",
+				"params"		:{
+					"element_name"  	: "login_button",
+					"wait_for_element"	: "search_bar"
+				}
+			}
+		},
+		"Job Search":{
+			"Fill search bar" :
+			{
+				"to_do"			: "Fill",
+				"params"		:{
+					"element_name"  : "search_bar",
+					"key"			:[
+						"artificial intelligence OR machine learning",
+                        "Keys_enum.RETURN"
+					]
+				}
+			},
+			"Wait to load job button" :
+			{
+				"to_do"			: "Wait",
+				"params"		:{
+					"element_name"  : "job_button"
+				}
+			},
+			"Force sleep 1"		:
+			{
+				"to_do"			: "Sleep",
+				"params":{
+					"duration"		: 2
+				}
+			},
+			"Click on Jobs":
+			{
+				"to_do"			: "Click",
+				"params"		:{
+					"element_name"	 	 : "job_button",
+					"wait_for_element"	 : "job_search_results"
+				}
+			},
+			"Force sleep"		:
+			{
+				"to_do"			: "Sleep",
+				"params":{
+					"duration"		: 2
+				}
+			},
+			"Click on Filter":
+			{
+				"to_do"			: "Click",
+				"params"		:{
+					"element_name"  	: "time_filter_button",
+					"wait_for_element"	: "past_day_button"
+				}
+			},
+			"Force sleep 2"		:
+			{
+				"to_do"			: "Sleep",
+				"params":{
+					"duration"		: 5
+				}
+			},
+			"Click on Timeframe":
+			{
+				"to_do"			: "Click",
+				"params"		:{
+					"element_name"  	: "past_day_button",
+					"wait_for_element"	: "all_filters_button"
+				}
+			},
+			"Click on Validate":
+			{
+				"to_do"			: "Click",
+				"params"		:{
+					"element_name" 		: "all_filters_button",
+					"wait_for_element"	: "job_search_results"
+				}
+			}
+		},
+		"Scrap":{
+			"Force sleep 2"		:
+			{
+				"to_do"			: "Sleep",
+				"params":{
+					"duration"		: 2
+				}
+			},
+			"Get all links":
+			{
+				"to_do"			: "Scrap",
+				"params":{
+					"element_name"  	: "job_card",
+					"attribute_to_get"	: "href",
+					"page_locator"		: "number_of_page",
+					"page_button"		: "page_button",
+					"page_limit" 		: -1
+				}
+			},
+			"Close driver"		:
+			{
+				"to_do"			: "Close",
+				"params"        : {}
+			}
+		},
+		"Driver Multi":{
+			"multi": true
+		},
+		"Connect multi":{
+			"multi": true,
+			"Load home page"		:
+			{
+				"to_do"			: "Load",
+				"params"		:{
+					"url"			: "https://linkedin.com"
+				}
+
+			},
+			"Force sleep 1"		:
+			{
+				"to_do"			: "Sleep",
+				"params":{
+					"duration"		: 5
+				}
+			},
+			"Wait to load login"	:
+			{
+				"to_do"			: "Wait",
+				"params"		:{
+					"element_name"  : "login"
+				}
+			},
+			"Fill log in"	:
+			{
+				"to_do"			: "Fill",
+				"params"		:{
+					"element_name"  : "login",
+					"key"			: "email_usr"
+				}
+			},
+			"Fill password"		:
+			{
+				"to_do"			: "Fill",
+				"params"		:{
+					"element_name"  : "password",
+					"key"			: "password"
+				}
+			},
+			"Force sleep"		:
+			{
+				"to_do"			: "Sleep",
+				"params":{
+					"duration"		: 1
+				}
+			},
+			"Click Button login":
+			{
+				"to_do"			: "Click",
+				"params"		:{
+					"element_name"  	: "login_button",
+					"wait_for_element"	: "search_bar"
+				}
+			}
+		},
+		"Scrap multi":{
+			"multi": true,
+			"Load Job offers"		:
+			{
+				"to_do"			: "Load",
+				"params"		: {}
+			},
+			"Click description"		:
+			{
+				"to_do"			: "Click",
+				"params"		: {
+					"element_name"  	: "more_description_button",
+					"wait_for_element"	: "job_title"
+				}
+			},
+			"Get page contents":
+			{
+				"to_do"			: "Get",
+				"params":{
+					"element_name"  : ["job_title", "company_name", "job_location", "posted_date", "job_description",
+					"job_description_aux", "candidates", "info_elem", "recruiter_name", "recrtuiter_link", "recruiter_job_title" ],
+					"attribute"     : ["innerText", "innerText", "innerText", "innerText", "innerText", "innerText",
+					"innerText", "innerText", "innerText", "href", "innerText"]
+				}
+			},
+			"Force sleep"		:
+			{
+				"to_do"			: "Sleep",
+				"params":{
+					"duration"		: 5
+				}
+			}
+		},
+		"close":{
+			"multi"  : true,
+			"Close driver multi": {
+				"to_do"  : "Close",
+				"params" : {}
+			}
+		},
+		"Export data":{
+			"Export data":{
+				"to_do"			: "Export",
+				"params":{
+					"path"	: "artificial_intelligence"
+				}
+			}
+		}	
+	},
+
+	"inner_variables": [""]
+}

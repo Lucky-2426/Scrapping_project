@@ -1,0 +1,353 @@
+{	
+	"credentials":[
+		{
+			"email":"jangui123@hotmail.fr",
+			"password":"A1b2C3&4ckZ31!:fg"
+		},
+		{
+			"email":"tTYKErtXAr@gmail.com",
+			"password":"z5iuVc9p482vBm"
+		},
+		{
+			"email":"Q2iLfmbwMi4X@hotmail.com",
+			"password":"Vj9uK47R05UE"
+		},
+		{
+			"email":"lenarines123@outlook.fr",
+			"password":"Troudenez123!"
+		}
+	],
+
+	"page_elements":{
+		"login": {
+			"enum": "XPATH",
+			"tag" : "//input[@name = 'session_key']"
+		},
+		"password": {
+			"enum": "XPATH",
+			"tag" : "//input[@name = 'session_password']"
+		},
+		"login_button": {
+			"enum": "CLASS_NAME",
+			"tag" : "sign-in-form__submit-button"
+		},
+		"search_bar": {
+			"enum": "XPATH",
+			"tag" : "//input[@placeholder='Search']"
+		},
+		"job_button": {
+			"enum": "XPATH",
+			"tag" : "//button[text()[contains(.,'Jobs')]]"
+		},
+		"people_button": {
+			"enum": "XPATH",
+			"tag" : "//button[text()[contains(.,'People')]]"
+		},
+		"location_filter_button": {
+			"enum": "XPATH",
+			"tag" : "//button[text()[contains(.,'Locations')]]"
+		},
+		"belgium_button": {
+			"enum": "XPATH",
+			"tag" : "//span[text()[contains(.,'Belgium')]]"
+		},		
+		"time_filter_button": {
+			"enum": "XPATH",
+			"tag" : "//button[text()[contains(.,'Date Posted')]]"
+		},
+		"past_month_button": {
+			"enum": "XPATH",
+			"tag" : "//span[text()[contains(.,'Past Month')]]"
+		},
+		"past_week_button": {
+			"enum": "XPATH",
+			"tag" : "//span[text()[contains(.,'Past Week')]]"
+		},
+		"past_day_button": {
+			"enum": "XPATH",
+			"tag" : "//span[text()[contains(.,'Past 24 hours')]]"
+		},
+		"time_filter_validation_button": {
+			"enum": "XPATH",
+			"tag" : "//button[@aria-label='Apply current filter to show results']"
+		},	
+		"all_filters_button": {
+			"enum": "XPATH",
+			"tag" : "//button[@aria-label='Show all filters. Clicking this button displays all available filter options.']"
+		},				
+		"job_search_results": {
+			"enum": "XPATH",
+			"tag" : "//div[contains(@class, 'jobs-search-results')]"
+		},
+		"entity_results": {
+			"enum": "XPATH",
+			"tag" : "//div[contains(@class, 'entity-result__item')]"
+		},
+		"job_card": {
+			"enum": "XPATH",
+			"tag" : "//a[contains(@class, 'job-card-list__title')][contains(@class, 'job-card-container__link')]"
+		},
+		"robot_identification": {
+			"enum": "XPATH",
+			"tag" : "//button[text()[contains(.,'Vérifier')]]"
+		},
+		"number_of_page": {
+			"enum": "XPATH",
+			"tag" : "//li[contains(@class,'artdeco-pagination__indicator--number')]"
+		},
+		"page_button": {
+			"enum": "XPATH",
+			"tag" : "button|@aria-label|Page "
+		},
+		"next_page_button": {
+			"enum": "XPATH",
+			"tag" : "//button[@aria-label='Next']"
+		},
+		"more_description_button": {
+			"enum": "XPATH",
+			"tag" : "//button[contains(@class, 't-14')][contains(@class, 'artdeco-button--icon-right artdeco-button--3')]"
+		},
+		"job_title": {
+			"enum": "CLASS_NAME",
+			"tag" : "t-24.t-bold.jobs-unified-top-card__job-title"
+		},
+		"company_name": {
+			"enum": "CLASS_NAME",
+			"tag" : "jobs-unified-top-card__company-name"
+		},
+		"job_location": {
+			"enum": "CLASS_NAME",
+			"tag" : "jobs-unified-top-card__bullet"
+		},
+		"posted_date": {
+			"enum": "CLASS_NAME",
+			"tag" : "jobs-unified-top-card__posted-date\n                  "
+		},
+		"job_description": {
+			"enum": "ID",
+			"tag" : "job-details"
+		},
+		"job_description_aux": {
+			"enum": "CLASS_NAME",
+			"tag" : "jobs-unified-description__content"
+		},
+		"candidates": {
+			"enum": "XPATH",
+			"tag" : "//span[contains(@class, 'jobs-unified-top-card__applicant-count--low t-bold')]"
+		},
+		"info_elem": {
+			"enum": "CLASS_NAME",
+			"tag" : "jobs-unified-top-card__job-insight"
+		},
+		"recruiter_name": {
+			"enum": "XPATH",
+			"tag" : "//div[@class='hirer-card__hirer-information pt3 pb3 t-12 t-black--light']/a[@class='app-aware-link']"
+		},
+		"recrtuiter_link": {
+			"enum": "XPATH",
+			"tag" : "//div[@class='hirer-card__hirer-information pt3 pb3 t-12 t-black--light']/a[@class='app-aware-link']"
+		},
+		"recruiter_job_title": {
+			"enum": "XPATH",
+			"tag" : "//div[contains(@class, 'hirer-card__hirer-job-title')]"
+		},		
+		"person_object": {
+			"enum": "XPATH",
+			"tag" : "//div[@class='entity-result__item']"
+		},
+		"person_name": {
+			"enum": "XPATH",
+			"tag" : "//div[@class='mb1']//a[@class= 'app-aware-link']"
+		},
+		"person_location": {
+			"enum": "XPATH",
+			"tag" : "//div[@class='mb1']//div[@class= 'entity-result__secondary-subtitle t-14 t-normal']"
+		},
+		"person_job_title": {
+			"enum": "XPATH",
+			"tag" : "//div[@class='mb1']//div[@class= 'entity-result__primary-subtitle t-14 t-black t-normal']"
+		},
+		"person_url": {
+			"enum": "XPATH",
+			"tag" : "//div[contains(@class, 'hirer-card__hirer-job-title')]"
+		},
+		"person_company": {
+			"enum": "XPATH",
+			"tag" : "//div[@class = 'entity-result__content entity-result__divider pt3 pb3 t-12 t-black--light']/div[contains(@class, 'linked-area flex-1')]"
+		},
+		"indeed_job_title_search_bar": {
+			"enum": "XPATH",
+			"tag" : "//input[@id='text-input-what']"
+		},
+		"indeed_job_location_search_bar": {
+			"enum": "XPATH",
+			"tag" : "//input[@id='text-input-where']"
+		},
+		"indeed_search_button": {
+			"enum": "XPATH",
+			"tag" : "//button[@class='yosegi-InlineWhatWhere-primaryButton']"
+		},
+		"indeed_cookies_button": {
+			"enum": "XPATH",
+			"tag" : "//button[@id='onetrust-reject-all-handler']"
+		},
+		"indeed_close_popup_button": {
+			"enum": "XPATH",
+			"tag" : "//button[contains(@class, 'popover-x-button-close')]"
+		},
+		"indeed_close_google_button": {
+			"enum": "XPATH",
+			"tag" : "//button[@class='icl-CloseButton icl-Card-close']"
+		},
+		"indeed_time_filter_button": {
+			"enum": "XPATH",
+			"tag" : "//button[@id='filter-dateposted']"
+		},
+		"indeed_1day_time_filter": {
+			"enum": "XPATH",
+			"tag" : "//li[@class='yosegi-FilterPill-dropdownListItem']/a[text()[contains(.,'24')]]"
+		},
+		"indeed_3day_time_filter": {
+			"enum": "XPATH",
+			"tag" : "//li[@class='yosegi-FilterPill-dropdownListItem']/a[text()[contains(.,'3')]]"
+		},
+		"indeed_7day_time_filter": {
+			"enum": "XPATH",
+			"tag" : "//li[@class='yosegi-FilterPill-dropdownListItem']/a[text()[contains(.,'7')]]"
+		},
+		"indeed_14day_time_filter": {
+			"enum": "XPATH",
+			"tag" : "//li[@class='yosegi-FilterPill-dropdownListItem']/a[text()[contains(.,'14')]]"
+		},
+		"indeed_job_card": {
+			"enum": "XPATH",
+			"tag" : "//div[@class='slider_container css-g7s71f eu4oa1w0']//a[@class='jcs-JobTitle css-jspxzf eu4oa1w0']"
+		},
+		"indeed_page_button": {
+			"enum": "XPATH",
+			"tag" : "a|@data-testid|pagination-page-"
+		},
+		"indeed_job_title": {
+			"enum": "XPATH",
+			"tag" : "//h1[@class='icl-u-xs-mb--xs icl-u-xs-mt--none jobsearch-JobInfoHeader-title']"
+		},
+		"indeed_company_name": {
+			"enum": "XPATH",
+			"tag" : "//div[@class='jobsearch-InlineCompanyRating icl-u-xs-mt--xs jobsearch-DesktopStickyContainer-companyrating']"
+		},
+		"indeed_job_location": {
+			"enum": "XPATH",
+			"tag" : "//div[@class='icl-u-xs-mt--xs icl-u-textColor--secondary jobsearch-JobInfoHeader-subtitle jobsearch-DesktopStickyContainer-subtitle']/div[2]"
+		},
+		"indeed_posted_date": {
+			"enum": "CLASS_NAME",
+			"tag" : "jobsearch-HiringInsights-entry--text"
+		},
+		"indeed_job_description": {
+			"enum": "ID",
+			"tag" : "jobDescriptionText"
+		},
+		"indeed_info_elem": {
+			"enum": "ID",
+			"tag" : "salaryInfoAndJobType"
+		},
+		"glassdoor_connect_button": {
+			"enum": "XPATH",
+			"tag" : "//button[contains(@class, 'd-none d-lg-block p-0 LockedHomeHeaderStyles__signInButton')]"
+		}	,
+		"glassdoor_email": {
+			"enum": "ID",
+			"tag" : "modalUserEmail"
+		}	,
+		"glassdoor_password": {
+			"enum": "ID",
+			"tag" : "modalUserPassword"
+		}	,
+		"glassdoor_login_button": {
+			"enum": "XPATH",
+			"tag" : "//button[contains(@type, 'submit')][contains(@name, 'submit')]"
+		}	,
+		"glassdoor_login_button_aux": {
+			"enum": "XPATH",
+			"tag" : "//button[contains(@type, 'submit')][contains(@name, 'submit')]"
+		},
+		"glassdoor_cookies": {
+			"enum": "ID",
+			"tag" : "onetrust-accept-btn-handler"
+		},
+		"glassdoor_job_search": {
+			"enum": "ID",
+			"tag" : "KeywordSearch"
+		},
+		"glassdoor_location": {
+			"enum": "ID",
+			"tag" : "LocationSearch"
+		},
+		"glassdoor_time_filter": {
+			"enum": "XPATH",
+			"tag" : "//div[@data-test='DATEPOSTED']"
+		},
+		"glassdoor_1day_time_filter": {
+			"enum": "XPATH",
+			"tag" : "//li[@value='1']"
+		},
+		"glassdoor_3day_time_filter": {
+			"enum": "XPATH",
+			"tag" : "//li[@value='3']"
+		},
+		"glassdoor_7day_time_filter": {
+			"enum": "XPATH",
+			"tag" : "//li[@value='7']"
+		},
+		"glassdoor_14day_time_filter": {
+			"enum": "XPATH",
+			"tag" : "//li[@value='14']"
+		},
+		"glassdoor_30day_time_filter": {
+			"enum": "XPATH",
+			"tag" : "//li[@value='30']"
+		},
+		"glassdoor_job_card": {
+			"enum": "XPATH",
+			"tag" : "//ul[@data-test='jlGrid']/li//a[@class='jobLink']"
+		},
+		"glassdoor_page_button": {
+			"enum": "XPATH",
+			"tag" : "button|@data-test|pagination-link-"
+		},
+		"glassdoor_close_popup": {
+			"enum": "XPATH",
+			"tag" : "//span[@class='SVGInline modal_closeIcon']"
+		},
+		"glassdoor_job_description": {
+			"enum": "ID",
+			"tag" : "JobDescriptionContainer"
+		},
+		"glassdoor_location_info": {
+			"enum": "XPATH",
+			"tag" : "//div[@class='css-1v5elnn e11nt52q2']"
+		},
+		"glassdoor_job_title": {
+			"enum": "XPATH",
+			"tag" : "//div[@class='css-17x2pwl e11nt52q6']"
+		},
+		"glassdoor_company_name": {
+			"enum": "XPATH",
+			"tag" : "//div[@class='css-16nw49e e11nt52q1']"
+		},
+		"glassdoor_more_description": {
+			"enum": "XPATH",
+			"tag" : "//div[@class='css-1rzz8ht ecgq1xb2']"
+		},
+		"glassdoor_company_tab": {
+			"enum": "XPATH",
+			"tag" : "//div[@data-tab-type='overview']"
+		},		
+		"glassdoor_company_tab_info": {
+			"enum": "XPATH",
+			"tag" : "//div[@class='css-vugejy es5l5kg0']"
+		}
+
+		
+	}
+}
